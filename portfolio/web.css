@@ -1,0 +1,389 @@
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #181818;
+color: white;
+display: flex;
+flex-direction: column;
+height: 100vh;
+overflow: hidden;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode styles */
+body.light-mode {
+background-color: #f5f5f5;
+color: #333;
+}
+
+.header {
+background-color: black;
+color: #b3e6ff;
+display: flex;
+justify-content: flex-end;
+padding: 10px 20px;
+position: sticky;
+top: 0;
+z-index: 1000;
+transition: background-color 0.3s ease;
+}
+
+body.light-mode .header {
+background-color: #ffffff;
+color: #333;
+border-bottom: 1px solid #e0e0e0;
+}
+
+.header .icon {
+width: 24px;
+height: 24px;
+margin-left: 10px;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+.header .icon:hover {
+transform: scale(1.1);
+}
+
+.main {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+position: relative;
+}
+
+/* Background GIF for the main body area */
+.main::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('assets/background.gif');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+opacity: 0.3;
+z-index: 1;
+transition: opacity 0.3s ease;
+}
+
+body.light-mode .main::before {
+opacity: 0.1;
+}
+
+.main-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: #1f1f1f;
+color: white;
+border-radius: 15px;
+padding: 0;
+width: 78%;
+max-width: 780px;
+min-width: 390px;
+height: 65vh;
+min-height: 500px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+text-align: center;
+position: relative;
+border: 2px solid white;
+overflow: hidden;
+z-index: 2;
+transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode .main-content {
+background-color: #ffffff;
+color: #333;
+border: 2px solid #333;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content-header {
+background-color: black;
+color: white;
+text-align: left;
+width: 100%;
+padding: 10px 20px;
+border-top-left-radius: 13px;
+border-top-right-radius: 13px;
+border-bottom: 2px solid white;
+box-sizing: border-box;
+position: relative;
+z-index: 3;
+transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-mode .main-content-header {
+background-color: #ffffff;
+color: #333;
+border-bottom: 2px solid #333;
+}
+
+.main-content-body {
+padding: 40px 40px 40px 40px;
+width: 100%;
+height: 100%;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+z-index: 3;
+}
+
+.main-content h1 {
+margin-top: 0;
+margin-bottom: 20px;
+font-size: 2.8rem;
+}
+
+.main-content h2 {
+margin: 15px 0 30px 0;
+font-size: 1.3rem;
+font-weight: lighter;
+}
+
+.icon-row {
+display: flex;
+justify-content: center;
+margin-top: 30px;
+gap: 30px;
+}
+
+.icon-row a {
+text-decoration: none;
+color: white;
+font-size: 1rem;
+text-align: center;
+padding: 15px;
+border-radius: 10px;
+transition: all 0.3s ease;
+}
+
+body.light-mode .icon-row a {
+color: #333;
+}
+
+.icon-row img {
+display: block;
+margin: 0 auto 8px auto;
+width: 45px;
+height: 45px;
+transition: transform 0.3s ease;
+}
+
+.icon-row a:hover img {
+transform: scale(1.1);
+}
+
+.footer {
+text-align: center;
+padding: 20px;
+background-color: black;
+color: white;
+border-radius: 0px;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode .footer {
+background-color: #ffffff;
+color: #333;
+border-top: 1px solid #e0e0e0;
+}
+
+.footer a {
+color: white;
+margin: 0 15px;
+text-decoration: none;
+transition: all 0.3s ease;
+display: inline-block;
+}
+
+body.light-mode .footer a {
+color: #333;
+}
+
+.footer a:hover {
+transform: translateY(-3px);
+filter: brightness(1.2);
+}
+
+.footer a img {
+width: 35px;
+height: 35px;
+transition: transform 0.3s ease;
+}
+
+.footer a:hover img {
+transform: scale(1.1) rotate(5deg);
+}
+
+/* Draggable Window Styles */
+.draggable-window {
+position: absolute;
+background-color: #1f1f1f;
+color: white;
+border-radius: 15px;
+width: 78vw;
+max-width: 780px;
+min-width: 390px;
+border: 2px solid white;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+z-index: 2000;
+overflow: hidden;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(0);
+display: block;
+opacity: 0;
+transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+pointer-events: none;
+}
+
+body.light-mode .draggable-window {
+background-color: #ffffff;
+color: #333;
+border: 2px solid #333;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.draggable-window.active {
+transform: translate(-50%, -50%) scale(1);
+opacity: 1;
+pointer-events: all;
+}
+
+.draggable-window.closing {
+transform: translate(-50%, -50%) scale(0.8);
+opacity: 0;
+transition: all 0.3s ease-in;
+}
+
+.draggable-window-header {
+background-color: black;
+color: white;
+text-align: left;
+width: 100%;
+padding: 10px 20px;
+border-top-left-radius: 13px;
+border-top-right-radius: 13px;
+border-bottom: 2px solid white;
+box-sizing: border-box;
+cursor: move;
+display: flex;
+justify-content: space-between;
+align-items: center;
+user-select: none;
+transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-mode .draggable-window-header {
+background-color: #ffffff;
+color: #333;
+border-bottom: 2px solid #333;
+}
+
+.draggable-window-header .close-btn {
+background: none;
+border: none;
+color: white;
+font-size: 20px;
+cursor: pointer;
+padding: 5px;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+transition: all 0.2s ease;
+}
+
+body.light-mode .draggable-window-header .close-btn {
+color: #333;
+}
+
+.draggable-window-header .close-btn:hover {
+color: #ff6b6b;
+background-color: rgba(255, 107, 107, 0.1);
+transform: scale(1.1);
+}
+
+.draggable-window-body {
+padding: 20px 40px 40px 40px;
+width: 100%;
+box-sizing: border-box;
+max-height: 400px;
+overflow-y: auto;
+}
+
+/* Smooth scrollbar for window content */
+.draggable-window-body::-webkit-scrollbar {
+width: 8px;
+}
+
+.draggable-window-body::-webkit-scrollbar-track {
+background: rgba(255, 255, 255, 0.1);
+border-radius: 4px;
+}
+
+body.light-mode .draggable-window-body::-webkit-scrollbar-track {
+background: rgba(0, 0, 0, 0.1);
+}
+
+.draggable-window-body::-webkit-scrollbar-thumb {
+background: rgba(255, 255, 255, 0.3);
+border-radius: 4px;
+}
+
+body.light-mode .draggable-window-body::-webkit-scrollbar-thumb {
+background: rgba(0, 0, 0, 0.3);
+}
+
+.draggable-window-body::-webkit-scrollbar-thumb:hover {
+background: rgba(255, 255, 255, 0.5);
+}
+
+body.light-mode .draggable-window-body::-webkit-scrollbar-thumb:hover {
+background: rgba(0, 0, 0, 0.5);
+}
+
+/* Dragging state */
+.draggable-window.dragging {
+transition: none;
+cursor: grabbing;
+}
+
+.draggable-window.dragging .draggable-window-header {
+cursor: grabbing;
+}
+
+/* Light mode link colors */
+body.light-mode #links-window .draggable-window-body a {
+color: #0066cc !important;
+}
+
+body.light-mode #links-window .draggable-window-body a[href*="youtube"] {
+color: #ff0000 !important;
+}
+
+body.light-mode #links-window .draggable-window-body a[href*="linkedin"] {
+color: #0077b5 !important;
+}
+
+body.light-mode #links-window .draggable-window-body a[href*="github"] {
+color: #333 !important;
+}
+
+body.light-mode #links-window .draggable-window-body a[href*="mailto"] {
+color: #28a745 !important;
+}

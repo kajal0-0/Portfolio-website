@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="web.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kajal's Portfolio</title>
+
+</head>
+<body>
+<!-- Header Section -->
+<div class="header">
+<img class="icon" src="assets/moon.png" alt="Toggle Theme" onclick="toggleTheme()">
+</div>
+<!-- Main Content -->
+<div class="main">
+<div class="main-content">
+<div class="main-content-header">
+ home
+</div>
+<div class="main-content-body">
+<h1>Hi! I'm Kajal</h1>
+<h2>Final year computer science student >_<</h2>
+<div class="icon-row">
+<a href="#about" onclick="openWindow('about', 'About Me'); return false;">
+<img src="assets/info.png" alt="About">
+ About
+</a>
+<a href="#links" onclick="openWindow('links', 'My Links'); return false;">
+<img src="assets/links.png" alt="Links">
+ Links
+</a>
+<a href="#work" onclick="openWindow('work', 'My Work'); return false;">
+<img src="assets/work.png" alt="Work">
+ Work
+</a>
+<a href="#contact" onclick="openWindow('contact', 'Contact Me'); return false;">
+<img src="assets/contact.png" alt="Contact">
+ Contact
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Draggable Windows -->
+<div id="about-window" class="draggable-window">
+  <div class="draggable-window-header">
+    <span>About Me</span>
+    <button class="close-btn" onclick="closeWindow('about-window')">&times;</button>
+  </div>
+  <div class="draggable-window-body">
+    <h2>About Kajal</h2>
+  <p>I am a final-year Computer Science student at Vellore Institute of Technology, specializing in Information Security with a CGPA of 8.86.</p>
+  <p>My areas of interest include software engineering, full-stack development, artificial intelligence, and cybersecurity. I am passionate about developing secure, scalable applications and enjoy learning new technologies.</p>
+  <p>In addition to academic pursuits, I actively engage in event organization and outreach programs, while continuously building on my technical skills through certifications and real-world projects.</p>
+
+  </div>
+</div>
+
+<div id="work-window" class="draggable-window">
+  <div class="draggable-window-header">
+    <span>My Work</span>
+    <button class="close-btn" onclick="closeWindow('work-window')">&times;</button>
+  </div>
+  <div class="draggable-window-body">
+    <h2>Projects & Experience</h2>
+
+<h3>Internships</h3>
+<p><strong>Ericsson – Project Intern (July 2025 – Present)</strong><br>
+• Implemented cloud migration using MongoDB Atlas and AWS Free Tier<br>
+• Automated data pipelines, reducing downtime by 25% and improving latency by 15%</p>
+
+<p><strong>Infosys Springboard – Full-Stack Developer (Nov 2024 – Feb 2025)</strong><br>
+• Developed a full-stack application with Spring Boot, Thymeleaf, and MySQL<br>
+• Achieved 95% test coverage using Mockito and improved code quality with SonarQube integration</p>
+
+<h3>Selected Projects</h3>
+<p><strong>Fraud Transaction Detection System</strong><br>
+Built using Flask and machine learning models (Random Forest, XGBoost, SVM) to detect fraudulent activity with high accuracy</p>
+
+<p><strong>AQI Prediction Using LSTM</strong><br>
+Developed a deep learning model to predict air quality trends; tuned hyperparameters to improve reliability and reduce overfitting</p>
+
+<p><strong>Security Monitoring Tool</strong><br>
+Created a keylogger with secure SMTP reporting for real-time monitoring and alerting</p>
+
+<p><strong>Java Game Development</strong><br>
+Designed and developed a modular, open-world exploration game using object-oriented Java</p>
+
+  </div>
+</div>
+
+<div id="links-window" class="draggable-window">
+  <div class="draggable-window-header">
+    <span>My Links</span>
+    <button class="close-btn" onclick="closeWindow('links-window')">&times;</button>
+  </div>
+  <div class="draggable-window-body">
+    <h2>Connect With Me</h2>
+    <p>will be updated soon ...</p>
+  
+  </div>
+</div>
+
+<div id="contact-window" class="draggable-window">
+  <div class="draggable-window-header">
+    <span>Contact Me</span>
+    <button class="close-btn" onclick="closeWindow('contact-window')">&times;</button>
+  </div>
+  <div class="draggable-window-body">
+    <h2>Get In Touch</h2>
+    <p>I'd love to hear from you! Whether you have a project in mind, want to collaborate, or just want to say hello, feel free to reach out.</p>
+    
+    <div style="margin-top: 30px;">
+      <h3>Email</h3>
+      <p>kajalpahil061@gmail.com</p>
+      
+    </div>
+    
+    <div style="margin-top: 30px; text-align: center;">
+      <p><strong>Let's build something amazing together!</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+<span>© 2025 Kajal Pahil</span>
+<div style="margin-top: 10px;">
+<a href="https://youtube.com"><img src="assets/youtube-2.png" alt="YouTube"></a>
+<a href="https://linkedin.com"><img src="assets/linkedin-2.png" alt="LinkedIn"></a>
+<a href="https://github.com"><img src="assets/github-2.png" alt="GitHub"></a>
+</div>
+</div>
+<script src="web.js"></script>
+</body>
+</html>
